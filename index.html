@@ -1,0 +1,68 @@
+<html>
+ <head>
+ <title>Executable</title>
+ <script type = "text/javascript">
+var final = "";
+var first = false;
+function autistic()
+{
+  var string = document.getElementById("asd").value;
+  final = "";
+  for(i=0;i<string.length;i++)
+  {
+    var num = Math.floor((Math.random() * 2) + 1);
+    if(num==1)
+    {
+      if(string[i] == string[i].toLowerCase()){     
+      var a = string[i].toUpperCase();
+      final += a;
+      }
+      else{
+      var a = string[i].toLowerCase();
+      final +=a;
+      }
+    }
+    else
+      final+=string[i];
+  }
+  document.getElementById("asd").value = final;
+}
+document.addEventListener('keydown', function (e) {
+    if (e.keyCode === 13){
+      autistic();
+    }
+  });
+document.addEventListener('keyup', function (e) {
+    if (e.keyCode === 13){
+       var copyText = document.getElementById("asd");
+        document.getElementById("asd").value = final.slice(0, final.length);
+        copyText.select();
+        document.execCommand("copy");
+//        document.execCommand("paste");
+        copyText.blur();
+
+        if(first == false){
+        alert("Copied text; just press Control + V to paste your text! \n This alert will disappear after the first time.");
+        first = true;
+        }
+
+    }
+  });
+  
+  
+
+ </script>
+ </head>
+ <body>
+<center><br><br><br>
+  <label>Austistic Labeller: </label><Br>
+  <textarea type = "text" id = "asd" wrap = "hard"></textarea><br/>
+  <input type = "button" value = "Press Enter to activate autism" onkeydown="autistic()"/><Br/>
+  
+<script>
+    document.getElementById("asd").style.height = "200px";
+    document.getElementById("asd").style.fontSize = "30px";
+    
+</script>
+ </body>
+</html>
