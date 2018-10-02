@@ -31,6 +31,11 @@ document.addEventListener('keydown', function (e) {
     if (e.keyCode === 13){
       autistic();
     }
+     if (e.keyCode === 18){
+          if(document.hasFocus()){
+          document.getElementById("asd").value = "";
+        }
+      }
   });
 document.addEventListener('keyup', function (e) {
     if (e.keyCode === 13){
@@ -45,8 +50,8 @@ document.addEventListener('keyup', function (e) {
         alert("Copied text; just press Control + V to paste your text! \n This alert will disappear after the first time.");
         first = true;
         }
-
     }
+   
   });
   
   
@@ -56,7 +61,8 @@ document.addEventListener('keyup', function (e) {
  <body>
 <center><br><br><br>
   <label>Austistic Labeller: </label><Br>
-  <textarea type = "text" id = "asd" wrap = "hard"></textarea><br/>
+  Press ALT to delete all text<br/>
+  <textarea type = "text" id = "asd" wrap = "hard" onkeydown="autistic()"></textarea><br/>
   <input type = "button" value = "Press Enter to activate autism" onkeydown="autistic()"/><Br/>
   
 <script>
