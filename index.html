@@ -1,6 +1,6 @@
 <html>
  <head>
- <title>Executable</title>
+ <title>Kwyper's Random Projects</title>
  <script type = "text/javascript">
 var final = "";
 var first = false;
@@ -27,14 +27,29 @@ function autistic()
   }
   document.getElementById("asd").value = final;
 }
+
+function bigb()
+{
+  var present = document.getElementById("qwe").value;
+  for(i=0;i<present.length;i++)
+  {
+    if(present[i] === "b" && present[i-1] != ":" && present[i+1] != ":"){
+    var ch = ":b:";
+     present = present.slice(0, i) + ch + present.slice(i+1, present.length);
+    }
+  }
+  document.getElementById("qwe").value = present;
+}
+
+
 document.addEventListener('keydown', function (e) {
     if (e.keyCode === 13){
       autistic();
+      bigb();
     }
      if (e.keyCode === 18){
-          if(document.hasFocus()){
-          document.getElementById("asd").value = "";
-        }
+        document.getElementById("asd").value = "";
+        document.getElementById("qwe").value = "";
       }
   });
 document.addEventListener('keyup', function (e) {
@@ -47,15 +62,21 @@ document.addEventListener('keyup', function (e) {
         copyText.blur();
 
         if(first == false){
-        alert("Copied text; just press Control + V to paste your text! \n This alert will disappear after the first time.");
+     //   alert("Copied text; just press Control + V to paste your text! \n This alert will disappear after the first time.");
         first = true;
         }
     }
-   
   });
-  
-  
-
+  document.onmousemove = function () {
+    document.body.style.backgroundColor ="#"+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);
+  }
+ </script>
+ <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+ $("button").click(function () {
+  $("#asd").is(":focus()"){
+    
+  }
+})
  </script>
  </head>
  <body>
@@ -64,11 +85,14 @@ document.addEventListener('keyup', function (e) {
   Press ALT to delete all text<br/>
   <textarea type = "text" id = "asd" wrap = "hard"></textarea><br/>
   <input type = "button" value = "Press Enter to activate autism" onkeydown="autistic()"/><Br/>
-  
+  <textarea type = "text" id = "qwe" wrap = "hard"></textarea><br/>
+  <button onclick = "bigb()">Press here migga</button>
+  $("#asd").is(":focus")
 <script>
     document.getElementById("asd").style.height = "200px";
     document.getElementById("asd").style.fontSize = "30px";
-    
+    document.getElementById("qwe").style.height = "200px";
+    document.getElementById("qwe").style.fontSize = "30px";
 </script>
  </body>
 </html>
