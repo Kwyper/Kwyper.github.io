@@ -32,15 +32,8 @@ function autistic()
 function bigb()
 {
   var present = document.getElementById("qwe").value;
-  for(i=0;i<present.length;i++)
-  {
-    if((present[i] === "b" || present[i] === "B") && present[i-1] != ":" && present[i+1] != ":"){
-    var ch = ":b:";
-     present = present.slice(0, i) + ch + present.slice(i+1, present.length);
-    }
-  }
-  document.getElementById("qwe").value = present;
-  console.log(present);
+  var yeah = present.replace(/b/g, ":b:");
+  document.getElementById("qwe").value = yeah;
 }
 
 
