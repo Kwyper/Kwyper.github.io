@@ -3,7 +3,8 @@
  <title>Kwyper's Random Projects</title>
  <script type = "text/javascript">
 var final = "";
-var first = false;
+var present = "";
+var epilepsy = false;
 function autistic()
 {
   var string = document.getElementById("asd").value;
@@ -33,12 +34,13 @@ function bigb()
   var present = document.getElementById("qwe").value;
   for(i=0;i<present.length;i++)
   {
-    if(present[i] === "b" && present[i-1] != ":" && present[i+1] != ":"){
+    if((present[i] === "b" || present[i] === "B") && present[i-1] != ":" && present[i+1] != ":"){
     var ch = ":b:";
      present = present.slice(0, i) + ch + present.slice(i+1, present.length);
     }
   }
   document.getElementById("qwe").value = present;
+  console.log(present);
 }
 
 
@@ -48,46 +50,66 @@ document.addEventListener('keydown', function (e) {
       bigb();
     }
      if (e.keyCode === 18){
-        document.getElementById("asd").value = "";
+        var here = document.activeElement;
+        if (here.id === "asd"){
+          document.getElementById("asd").value = "";
+        }
+        else if (here.id === "qwe"){
         document.getElementById("qwe").value = "";
+        }
       }
   });
 document.addEventListener('keyup', function (e) {
-    if (e.keyCode === 13){
-       var copyText = document.getElementById("asd");
-        document.getElementById("asd").value = final.slice(0, final.length);
-        copyText.select();
-        document.execCommand("copy");
-//        document.execCommand("paste");
-        copyText.blur();
-
-        if(first == false){
-     //   alert("Copied text; just press Control + V to paste your text! \n This alert will disappear after the first time.");
-        first = true;
-        }
+  var heard = document.activeElement;
+  var copyText2 = document.getElementById("qwe");
+  var copyText = document.getElementById("asd");
+    if (e.keyCode === 13 && heard.id == "qwe"){
+      document.getElementById("qwe").value = copyText2.value.slice(0, -1);
+      copyText2.select();
+      document.execCommand("copy");
+      copyText2.blur();
     }
+    else if (e.keyCode === 13 && heard.id == "asd"){
+      document.getElementById("asd").value = final.slice(0, final.length);
+      copyText.select();
+      document.execCommand("copy");
+      copyText.blur();
+      }
   });
-  document.onmousemove = function () {
+function more(){
+  if (epilepsy == false) {
+    epilepsy = true;
+  }
+  else{
+    epilepsy = false;
+  }
+}
+document.onmousemove = function () {
+  if(epilepsy == true){
     document.body.style.backgroundColor ="#"+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);
+    }
   }
+  //$("#asd").is(":focus")
  </script>
- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
- $("button").click(function () {
-  $("#asd").is(":focus()"){
-    
+<style>
+  label{
+    font-family: "Comic Sans MS", "Comic Sans";
   }
-})
- </script>
+  button{
+    font-family: "Comic Sans MS", "Comic Sans";
+  }
+</style>
  </head>
- <body>
+ <body bgcolor="AAAAAA">
 <center><br><br><br>
   <label>Austistic Labeller: </label><Br>
-  Press ALT to delete all text<br/>
+  <label>Press ALT to delete all text inside each text box</label><br/>
   <textarea type = "text" id = "asd" wrap = "hard"></textarea><br/>
-  <input type = "button" value = "Press Enter to activate autism" onkeydown="autistic()"/><Br/>
+
+  <button onclick="autistic()">Press Enter to activate autism</button><Br/>
   <textarea type = "text" id = "qwe" wrap = "hard"></textarea><br/>
-  <button onclick = "bigb()">Press here migga</button>
-  $("#asd").is(":focus")
+  <button onclick = "bigb()">Press here migga</button><br/>
+  <button onclick = "more()">If you have epilepsy don't press this</button>
 <script>
     document.getElementById("asd").style.height = "200px";
     document.getElementById("asd").style.fontSize = "30px";
