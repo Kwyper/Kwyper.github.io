@@ -34,6 +34,12 @@ function bigb()
   var present = document.getElementById("qwe").value;
   var yeah = present.replace(/:b:/g, "b");
   yeah = yeah.replace(/b/g, ":b:");
+  yeah = yeah.replace(/:B:/g, "B");
+  yeah = yeah.replace(/B/g, ":B:");
+/*  console.log(yeah);
+  yeah = present.replace(/\xF6/g, "o");
+  console.log(yeah);
+  yeah = present.replace(/o/g, "\xF6");*/
   document.getElementById("qwe").value = yeah;
 }
 
@@ -96,6 +102,8 @@ document.onmousemove = function () {
  </head>
  <body bgcolor="AAAAAA">
 <center><br><br><br>
+<table>
+  <tr><th>
   <label>Austistic Labeller: </label><Br>
   <label>Press ALT to delete all text inside each text box</label><br/>
   <textarea type = "text" id = "asd" wrap = "hard"></textarea><br/>
@@ -103,8 +111,11 @@ document.onmousemove = function () {
   <button onclick="autistic()">Press Enter to activate autism</button><Br/>
   <textarea type = "text" id = "qwe" wrap = "hard"></textarea><br/>
   <button onclick = "bigb()">Press here migga</button><br/>
-  <button onclick = "more()">If you have epilepsy don't press this</button>
-<script>
+  <button onclick = "more()">If you have epilepsy don't press this</button><Br/>
+  </th><th colspan="2">
+  <iframe src="https://www.deepfriedmemes.com" height="900px" width="400px"><p>Browser does not support IFrames.</iframe>
+  </th>
+  <script>
     document.getElementById("asd").style.height = "200px";
     document.getElementById("asd").style.fontSize = "30px";
     document.getElementById("qwe").style.height = "200px";
