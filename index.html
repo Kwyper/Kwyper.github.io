@@ -1,7 +1,7 @@
 <html>
- <head>
- <title>Kwyper's Random Projects</title>
- <script type = "text/javascript">
+<head>
+    <title>Kwyper's Random Projects</title>
+    <script type="text/javascript">
 var final = "";
 var present = "";
 var epilepsy = false;
@@ -14,7 +14,7 @@ function autistic()
     var num = Math.floor((Math.random() * 2) + 1);
     if(num==1)
     {
-      if(string[i] == string[i].toLowerCase()){     
+      if(string[i] == string[i].toLowerCase()){
       var a = string[i].toUpperCase();
       final += a;
       }
@@ -28,7 +28,6 @@ function autistic()
   }
   document.getElementById("asd").value = final;
 }
-
 function bigb()
 {
   var present = document.getElementById("qwe").value;
@@ -40,10 +39,15 @@ function bigb()
   yeah = present.replace(/\xF6/g, "o");
   console.log(yeah);
   yeah = present.replace(/o/g, "\xF6");*/
-  document.getElementById("qwe").value = yeah;
+    document.getElementById("qwe").value = yeah;
 }
+        function spaceitout() {
+            var uncaps = document.getElementById("bigiftrue").value;
+            uncaps.toUpperCase();
+            uncaps.split('').join(' ');
+            document.getElementById("bigiftrue").value = uncaps;
 
-
+        }       
 document.addEventListener('keydown', function (e) {
     if (e.keyCode === 13){
       autistic();
@@ -90,36 +94,43 @@ document.onmousemove = function () {
     }
   }
   //$("#asd").is(":focus")
- </script>
-<style>
-  label{
-    font-family: "Comic Sans MS", "Comic Sans";
-  }
-  button{
-    font-family: "Comic Sans MS", "Comic Sans";
-  }
-</style>
- </head>
- <body bgcolor="AAAAAA">
-<center><br><br><br>
-<table>
-  <tr><th>
-  <label>Austistic Labeller: </label><Br>
-  <label>Press ALT to delete all text inside each text box</label><br/>
-  <textarea type = "text" id = "asd" wrap = "hard"></textarea><br/>
+    </script>
+    <style>
+        label {
+            font-family: "Comic Sans MS", "Comic Sans";
+        }
 
-  <button onclick="autistic()">Press Enter to activate autism</button><Br/>
-  <textarea type = "text" id = "qwe" wrap = "hard"></textarea><br/>
-  <button onclick = "bigb()">Press here migga</button><br/>
-  <button onclick = "more()">If you have epilepsy don't press this</button><Br/>
-  </th><th colspan="2">
-  <iframe src="https://www.deepfriedmemes.com" height="900px" width="400px"><p>Browser does not support IFrames.</iframe>
-  </th>
-  <script>
+        button {
+            font-family: "Comic Sans MS", "Comic Sans";
+        }
+    </style>
+</head>
+<body bgcolor="AAAAAA">
+    <center>
+        <br><br><br>
+        <table>
+            <tr>
+                <th>
+                    <label>Austistic Labeller: </label><Br>
+                    <label>Press ALT to delete all text inside each text box</label><br />
+                    <textarea type="text" id="asd" wrap="hard"></textarea><br />
+                    <button onclick="autistic()">Press Enter to activate autism</button><Br />
+
+                    <textarea type="text" id="qwe" wrap="hard"></textarea><br />
+                    <button onclick="bigb()">Press here migga</button><br />
+
+                    <textarea type="text" id="bigiftrue" wrap="hard"></textarea><br/>
+                    <button onclick="spaceitout()">Press here to capitalize</button><br/>
+                    <button onclick="more()">If you have epilepsy don't press this</button><Br />
+                </th>
+                <th colspan="2">
+                    <iframe src="https://www.deepfriedmemes.com" height="900px" width="400px"><p>Browser does not support IFrames.</iframe>
+                </th></table></center>
+                <script>
     document.getElementById("asd").style.height = "200px";
     document.getElementById("asd").style.fontSize = "30px";
     document.getElementById("qwe").style.height = "200px";
     document.getElementById("qwe").style.fontSize = "30px";
-</script>
- </body>
+                </script>
+</body>
 </html>
